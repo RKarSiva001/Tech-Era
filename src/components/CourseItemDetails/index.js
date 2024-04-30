@@ -11,14 +11,14 @@ const apiStatusConstants = {
   inProgress: 'IN_PROGRESS',
 }
 
-class TechItemDetails extends Component {
+class CourseItemDetails extends Component {
   state = {techData: {}, apiStatus: apiStatusConstants.initial}
 
   componentDidMount() {
-    this.getTechItemData()
+    this.getCourseItemData()
   }
 
-  getTechItemData = async () => {
+  getCourseItemData = async () => {
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -45,7 +45,7 @@ class TechItemDetails extends Component {
     }
   }
 
-  renderTechItemDetails = () => {
+  renderCourseItemDetails = () => {
     const {techData} = this.state
     const {imageUrl, name, description} = techData
 
@@ -58,7 +58,7 @@ class TechItemDetails extends Component {
     )
   }
 
-  renderTechItemDetailsFailureView = () => (
+  renderCourseItemDetailsFailureView = () => (
     <div>
       <img
         src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
@@ -80,9 +80,9 @@ class TechItemDetails extends Component {
     const {apiStatus} = this.state
     switch (apiStatus) {
       case apiStatusConstants.success:
-        return this.renderTechItemDetails()
+        return this.renderCourseItemDetails()
       case apiStatusConstants.failure:
-        return this.renderTechItemDetailsFailureView()
+        return this.renderCourseItemDetailsFailureView()
       case apiStatusConstants.inProgress:
         return this.renderLoadingView()
       default:
@@ -91,4 +91,4 @@ class TechItemDetails extends Component {
   }
 }
 
-export default TechItemDetails
+export default CourseItemDetails

@@ -2,7 +2,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import Header from './components/Header'
 import TechEra from './components/TechEra'
-import TechItemDetails from './components/TechItemDetails'
+import CourseItemDetails from './components/CourseItemDetails'
 import NotFound from './components/NotFound'
 
 import './App.css'
@@ -13,7 +13,7 @@ const App = () => (
     <Header />
     <Switch>
       <Route exact path="/" component={TechEra} />
-      <Route path="/te/courses/:id" component={TechItemDetails} />
+      <Route path="/te/courses/:id" component={CourseItemDetails} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
