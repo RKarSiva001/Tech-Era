@@ -7,7 +7,7 @@ const TechItem = props => {
   const {id, name, logoUrl} = techData
 
   return (
-    <Link to={`/te/courses/${id}`} className="item-link">
+    <Link to={`/courses/${id}`} className="item-link">
       <li className="item-container">
         <img className="item-image" src={logoUrl} alt={name} />
         <p className="name">{name}</p>
